@@ -1,8 +1,7 @@
 //import Image from "next/image";
-
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
-import myself from "./myself.jpeg"
+import myself from "./myself.jpeg";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function Home() {
@@ -17,11 +16,16 @@ export default function Home() {
           <div className="flex flex-row gap-2">
             <p className="font-bold"> Name:</p> Nicholas </div>
           <div className="flex flex-row gap-2"> <p className="font-bold">Major:</p>Software Engineering, Year 1 Student</div>
-          <Image src={myself}
-            width={500}
-            height={500}
-            alt="Picture of the author"
-          />
+          <div className="flex flex-row gap-2"> <p className="font-bold">Hobbies:</p>I have no hobbies actually, I love my free time</div>
+          <div className = "flex justify-center">
+            <Image src={myself}
+              width={200}
+              height={200}
+              className="margin-left: 100"
+              alt="Picture of the author"
+
+            />
+          </div>
         </CardContent>
       </Card>
       <Alert>
