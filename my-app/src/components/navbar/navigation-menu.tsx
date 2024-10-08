@@ -5,9 +5,11 @@ export function NavigationBar() {
     return (
         <NavigationMenu className="list-none h-16">
             <NavigationMenuItem>
+                <Link href="/" legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         Home
                     </NavigationMenuLink>
+                </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
                 <Link href="/quiz" legacyBehavior passHref>
