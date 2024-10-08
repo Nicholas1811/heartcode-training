@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from "../ui/navigation-menu";
+import { ModeToggle } from "../mode-toggle";
 
 export function NavigationBar() {
     return (
@@ -25,6 +26,8 @@ export function NavigationBar() {
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
-        </NavigationMenu>
+            <ModeToggle>
+            </ModeToggle>
+            </NavigationMenu>
     )
 }

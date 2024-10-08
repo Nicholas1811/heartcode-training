@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { NavigationBar } from "@/components/navbar/navigation-menu";
+import { ThemeProvider } from "@/components/theme-provider"
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,7 +32,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Include the Navigation bar here in layout.tsx */}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
         <NavigationBar></NavigationBar>
+        </ThemeProvider>
         {children}
       </body>
     </html>

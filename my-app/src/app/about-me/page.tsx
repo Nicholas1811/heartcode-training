@@ -1,6 +1,6 @@
 //import Image from "next/image";
 
-import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import myself from "./myself.jpeg"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
