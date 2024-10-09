@@ -1,7 +1,6 @@
 //import Image from "next/image";
 
 import { FlipWords } from "@/components/ui/flip-words";
-import { SignIn, useUser } from '@clerk/nextjs'
 
 export default function Home() {
   const words: string[]= ["Skibidi", "Toilet", "Sigma"]
