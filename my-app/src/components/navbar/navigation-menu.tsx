@@ -1,35 +1,32 @@
-import Link from "next/link";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, navigationMenuTriggerStyle } from "../ui/navigation-menu";
+import { NavigationMenu} from "../ui/navigation-menu";
 import { ModeToggle } from "../mode-toggle";
+import { NavigationItem, NavItem } from "./navigation-item"
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+
+const navItem: NavItem[] = [
+    { navigationLink: "/", navigationDescription: "Project Heartcode" },
+    { navigationLink: "/quiz", navigationDescription: "Quiz" },
+    { navigationLink: "/about-me", navigationDescription: "About Me" },
+
+]
 
 export function NavigationBar() {
     return (
-        <NavigationMenu className="flex flex-row justify-between min-w-full list-none h-16 sticky top-0 p-5">
-            <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        Home
-                    </NavigationMenuLink>
-                </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-                <Link href="/quiz" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        Quiz
-                    </NavigationMenuLink>
-                </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-                <Link href="/about-me" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        About me
-                    </NavigationMenuLink>
-                </Link>
-            </NavigationMenuItem>
-            <div>
-            <ModeToggle>
-            </ModeToggle>
-            </div>
+            <NavigationMenu className="sticky top-0 list-none flex justify-between min-w-full h-[60px] bg-muted px-5">
+                <div className="flex flex-row justify-start gap-4">
+                    {navItem.map((navItem, index) => <NavigationItem key={index} navigationLink={navItem.navigationLink} navigationDescription={navItem.navigationDescription} />)}
+                </div>
+                <div className="flex flex-row justify-end">
+                    <div className = "flex gap-4">
+                    <ModeToggle />
+                    <SignedOut>
+                        <SignInButton />
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton/>
+                    </SignedIn>
+                    </div>
+                </div>
             </NavigationMenu>
     )
 }

@@ -4,6 +4,9 @@ import "./globals.css";
 import { NavigationBar } from "@/components/navbar/navigation-menu";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
+import {
+  ClerkProvider,
+} from '@clerk/nextjs'
 
 
 const geistSans = localFont({
@@ -28,18 +31,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Include the Navigation bar here in layout.tsx */}
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-        <NavigationBar></NavigationBar>
+          <NavigationBar>
+          </NavigationBar>
+          <Toaster />
+
+                {children}
+
         </ThemeProvider>
-        {children}
-        <Toaster />
+
       </body>
     </html>
+    </ClerkProvider>
+
   );
 }
 
