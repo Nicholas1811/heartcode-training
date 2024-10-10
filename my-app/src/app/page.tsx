@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <div className="flex flex-col h-[calc(100vh-60px)] items-center justify-center">
-        {/* <h1 className="font-bold text-5xl">Taking drugs is not <FlipWords words = {words}></FlipWords></h1> */}
+        <h1 className="font-bold text-5xl">Taking drugs is not <FlipWords words = {words}></FlipWords></h1>
         <h2 className = "py-10">Do you know the harmful effects of drugs? Please dont do it </h2>
       </div>
 
