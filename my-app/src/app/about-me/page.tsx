@@ -1,41 +1,63 @@
-//import Image from "next/image";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+'use client'
 import Image from "next/image";
-import myself from "./myself.jpeg";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { HoverEffect } from "../../components/ui/card-hover-effect";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import self from "../../../assets/header_imng.jpeg";
+import drugImageTwo from "../../../assets/software.png";
+import drugImageThree from "../../../assets/mahjong.jpeg";
+
+
 
 export default function Home() {
   return (
     <div>
-      Hello World!
-      <Card>
-        <CardHeader>
-          <p>Hi there, My name is Nicholas!</p>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-row gap-2">
-            <p className="font-bold"> Name:</p> Nicholas </div>
-          <div className="flex flex-row gap-2"> <p className="font-bold">Major:</p>Software Engineering, Year 1 Student</div>
-          <div className="flex flex-row gap-2"> <p className="font-bold">Hobbies:</p>I have no hobbies actually, I love my free time</div>
-          <div className = "flex justify-center">
-            <Image src={myself}
-              width={200}
-              height={200}
-              className="margin-left: 100"
-              alt="Picture of the author"
 
-            />
+<div className="flex flex-col mt-6 items-center justify-center">
+    <Carousel className="w-full max-w-md" plugins={[
+        Autoplay({
+          delay: 2000,
+        }),
+      ]}>
+            <CarouselContent >
+              <CarouselItem>
+                <Image src={self} alt="Item" className="object-fill" />
+              </CarouselItem>
+              <CarouselItem>
+                <Image src={drugImageTwo} alt="Item" className="object-fill"/>
+              </CarouselItem>
+              <CarouselItem>
+                <Image src={drugImageThree} alt="Item" className="object-fill"/>
+
+              </CarouselItem>
+            </CarouselContent>
+          </Carousel>
           </div>
-        </CardContent>
-      </Card>
-      <Alert>
-        <AlertTitle>
-          Hey there! Welcome to the page!
-        </AlertTitle>
-        <AlertDescription>
-          I have added an alert here guys, just to show you how this works!
-        </AlertDescription>
-      </Alert>
+      <div className="max-w-5xl mx-auto px-8">
+      <HoverEffect items={projects} />
+    </div>
+
     </div>
   );
 }
+
+export const projects = [
+  {
+    title: "Who am i?",
+    description:
+      "My name is Nicholas, and I am 23 years of age",
+    link: "",
+  },
+  {
+    title: "What am I up to?",
+    description:
+      "I am student in Singapore Management University, in the school of computing and information systems. I am a student in software engineering now!",
+    link: "",
+  },
+  {
+    title: "What are my hobbies?",
+    description:
+      "I like to play mahjong, and I love me some me time, no particular hobbies!",
+    link: "",
+  },
+];
