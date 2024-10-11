@@ -4,7 +4,7 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import self from "../../assets/header_imng.jpeg";
-import drugImageTwo from "../../assets/software.png";
+import drugImageTwo from "../../assets/software.jpg";
 import drugImageThree from "../../assets/mahjong.jpeg";
 
 
