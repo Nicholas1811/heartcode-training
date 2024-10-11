@@ -74,94 +74,96 @@ export default function Quiz() {
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w2/3 space-y-6 ml-5">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem className="resize rounded-md">
-              <FormLabel className="text-xl">Question 1:</FormLabel>
-              <FormDescription className= "text-l">What is your name?</FormDescription>
-              <FormControl>
-                <Input className= "size-3/12 outline outline-3" placeholder="Place your name here" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="question1"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-xl">Question 2:</FormLabel>
-              <FormDescription className= "text-l">Do you sell drugs?</FormDescription>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+    <div className="flex flex-col justify-center items-center">
+      <Form {...form}>
+        <br />
+        <h1 className="text-xl font-bold">Hi, here are the past results of the quiz.</h1>
+        <br />
+
+        <form onSubmit={form.handleSubmit(onSubmit)} className="w2/3 space-y-6 ml-5">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-l">What is your name?</FormLabel>
                 <FormControl>
-                  <SelectTrigger className= "size-3/12 outline outline-3">
-                    <SelectValue placeholder="Please select an answer" />
-                  </SelectTrigger>
+                  <Input className="size-3/12 outline outline-3 w-full" placeholder="Place your name here" {...field} />
                 </FormControl>
-                <SelectContent>
-                  <SelectItem value="yes">Yes</SelectItem>
-                  <SelectItem value="no">No</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="question1"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-l">Do you sell drugs?</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl >
+                    <SelectTrigger className="size-3/12 outline outline-3 w-full">
+                      <SelectValue placeholder="Please select an answer" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="yes">Yes</SelectItem>
+                    <SelectItem value="no">No</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="question2"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-xl">Question 3:</FormLabel>
-              <FormDescription className= "text-l">Do you know of any drugs that are bad?</FormDescription>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl className= "size-3/12 outline outline-3">
-                  <SelectTrigger>
-                    <SelectValue placeholder="Please select an answer" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="all">All are Bad</SelectItem>
-                  <SelectItem value="cocaine">Cocaine</SelectItem>
-                  <SelectItem value="escatsy">Escatsy</SelectItem>
-                  <SelectItem value="weed">Weed</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="question2"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-l">Do you know of any drugs that are bad?</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl className="size-3/12 outline outline-3 w-full">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Please select an answer" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="all">All are Bad</SelectItem>
+                    <SelectItem value="cocaine">Cocaine</SelectItem>
+                    <SelectItem value="escatsy">Escatsy</SelectItem>
+                    <SelectItem value="weed">Weed</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="question3"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-xl">Question 4:</FormLabel>
-              <FormDescription className= "text-l">Do you think drugs are bad?</FormDescription>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl className= "size-3/12 outline outline-3">
-                  <SelectTrigger>
-                    <SelectValue placeholder="Please select an answer" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="yes">Yes</SelectItem>
-                  <SelectItem value="no">No</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+          <FormField
+            control={form.control}
+            name="question3"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-l">Do you think drugs are bad?</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl className="size-3/12 outline outline-3 w-full">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Please select an answer" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="yes">Yes</SelectItem>
+                    <SelectItem value="no">No</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button type="submit">Submit</Button>
+        </form>
+      </Form>
+    </div>
   )
 }

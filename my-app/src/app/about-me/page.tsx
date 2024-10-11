@@ -24,9 +24,6 @@ export default function Home() {
                 <Image src={self} alt="Item" className="object-fill" />
               </CarouselItem>
               <CarouselItem>
-                <Image src={drugImageTwo} alt="Item" className="object-fill"/>
-              </CarouselItem>
-              <CarouselItem>
                 <Image src={drugImageThree} alt="Item" className="object-fill"/>
 
               </CarouselItem>

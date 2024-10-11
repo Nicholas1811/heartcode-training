@@ -17,7 +17,7 @@ import Autoplay from "embla-carousel-autoplay"
 
 
 export default function Home() {
-  const words: string[] = ["Skibidi", "Toilet", "Sigma"]
+  const words: string[] = ["Cool", "Fun", "Amazing", "Awesome"]
 
   return (
       <div className="flex flex-col h-[calc(100vh-60px)] items-center justify-center">
