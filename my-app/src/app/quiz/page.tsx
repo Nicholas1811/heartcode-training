@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { insertOneUser } from "@/server/user";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 
 {/* form schema*/ }
@@ -80,15 +81,15 @@ export default function Quiz() {
         <h1 className="text-xl font-bold">Hi, here are the past results of the quiz.</h1>
         <br />
 
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w2/3 space-y-6 ml-5">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="w2/3 space-y-6">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-l">What is your name?</FormLabel>
+                <FormLabel className="text-l font-bold">What is your name?</FormLabel>
                 <FormControl>
-                  <Input className="size-3/12 outline outline-3 w-full" placeholder="Place your name here" {...field} />
+                  <Input className="size-10/12 outline outline-3 w-full" placeholder="Place your name here" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -99,7 +100,7 @@ export default function Quiz() {
             name="question1"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-l">Do you sell drugs?</FormLabel>
+                <FormLabel className="text-l font-bold">Do you sell drugs?</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl >
                     <SelectTrigger className="size-3/12 outline outline-3 w-full">
@@ -121,7 +122,7 @@ export default function Quiz() {
             name="question2"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-l">Do you know of any drugs that are bad?</FormLabel>
+                <FormLabel className="text-l font-bold">Do you know of any drugs that are bad?</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl className="size-3/12 outline outline-3 w-full">
                     <SelectTrigger>
@@ -140,28 +141,45 @@ export default function Quiz() {
             )}
           />
 
+
           <FormField
             control={form.control}
             name="question3"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-l">Do you think drugs are bad?</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl className="size-3/12 outline outline-3 w-full">
-                    <SelectTrigger>
-                      <SelectValue placeholder="Please select an answer" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="yes">Yes</SelectItem>
-                    <SelectItem value="no">No</SelectItem>
-                  </SelectContent>
-                </Select>
+              <FormItem className="space-y-3">
+                <FormLabel className="text-l font-bold">Do you think drugs are bad?</FormLabel>
+                <FormControl>
+                  <RadioGroup
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                    className="flex flex-col space-y-1"
+                  >
+                    <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormControl>
+                        <RadioGroupItem value="yes" />
+                      </FormControl>
+                      <FormLabel className="font-normal">
+                        Yes
+                      </FormLabel>
+                    </FormItem>
+                    <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormControl>
+                        <RadioGroupItem value="no" />
+                      </FormControl>
+                      <FormLabel className="font-normal">
+                        No                    
+                        </FormLabel>
+                    </FormItem>
+                  </RadioGroup>
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <Button type="submit">Submit</Button>
+
+          <div >
+            <Button className="size-3/12 w-full" type="submit">Submit</Button>
+          </div>
         </form>
       </Form>
     </div>
