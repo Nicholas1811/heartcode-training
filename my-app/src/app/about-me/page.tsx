@@ -41,7 +41,7 @@ export default function Home() {
   );
 }
 
-export const projects = [
+const projects = [
   {
     title: "Who am i?",
     description:
