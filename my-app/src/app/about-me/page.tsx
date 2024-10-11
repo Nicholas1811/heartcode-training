@@ -1,11 +1,11 @@
 'use client'
 import Image from "next/image";
-import { HoverEffect } from "../../components/ui/card-hover-effect";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import self from "../../../assets/header_imng.jpeg";
-import drugImageTwo from "../../../assets/software.png";
-import drugImageThree from "../../../assets/mahjong.jpeg";
+import self from "../../assets/header_imng.jpeg";
+import drugImageTwo from "../../assets/software.png";
+import drugImageThree from "../../assets/mahjong.jpeg";
 
 
 

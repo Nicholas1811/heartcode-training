@@ -9,9 +9,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { FlipWords } from "@/components/ui/flip-words";
-import drugImageOne from "../../assets/nodrugone.jpg";
-import drugImageTwo from "../../assets/nodrug2.jpg";
-import drugImageThree from "../../assets/nodrug3.jpg";
+import drugImageOne from "../assets/nodrugone.jpg";
+import drugImageTwo from "../assets/nodrug2.jpg";
+import drugImageThree from "../assets/nodrug3.jpg";
 import Autoplay from "embla-carousel-autoplay"
 
 
