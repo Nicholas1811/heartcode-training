@@ -54,7 +54,7 @@ export default function Quiz() {
   })
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    if (data.question1 == "yes" && data.question2 == "all" && data.question3 == "yes") {
+    if (data.question1 == "no" && data.question2 == "all" && data.question3 == "yes") {
       toast({
         title: `Congratulations ${data.name}`,
         description: `You got everything right! The correct answers are ${data.question1}, ${data.question2}, ${data.question3}`
